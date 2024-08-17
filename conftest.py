@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager as cd
 from webdriver_manager.firefox import GeckoDriverManager as fd
 from selenium.webdriver.chrome.service import Service as cs
 from selenium.webdriver.firefox.service import Service as fs
+from pages.login_page import LoginPage
 
 
 @pytest.fixture(params=['chrome'])
@@ -20,3 +21,8 @@ def driver(request):
         driver = webdriver.Firefox(service=service, options=options)
     yield driver
     driver.quit()
+
+@pytest.fixture()
+def log_in(driver):
+    LoginPage(driver).login()
+
