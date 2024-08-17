@@ -13,7 +13,7 @@ class MainPage(BasePage):
         self.wait_and_click(locator=MainPageLocators.ORDER_FEED_BUTTON)
 
     def find_text_order_feed(self):
-        return self.find_element(locator=MainPageLocators.ORDER_FEED_TEXT)
+        return self.find_element(locator=MainPageLocators.ORDER_FEED_BUTTON)
 
     def find_and_click_on_bun(self):
         self.wait_for_clickable(MainPageLocators.INGREDIENT_BUN).click()

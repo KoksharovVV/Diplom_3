@@ -1,4 +1,5 @@
 from pages.base_page import BasePage
+from locators.personal_cabinet_pege_locators import PersonalCabinetPageLocators
 from locators.login_page_locators import LoginPageLocators
 from data import TestDataUrl, TestLoginPageData
 

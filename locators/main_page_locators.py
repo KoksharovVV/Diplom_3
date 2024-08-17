@@ -7,7 +7,6 @@ class MainPageLocators:
     CONSTRUCTOR_BUTTON = (By.XPATH, ".//p[text()='Конструктор']")  # Кнопка Конструктор
     ORDER_FEED_BUTTON = (By.XPATH, ".//p[text()='Лента Заказов']")  # Кнопка Лента заказов
     ASSEMBLE_THE_BURGER_TEXT = (By.XPATH, ".//h1[text()='Соберите бургер']")  # Текст 'Соберите бургер'
-    ORDER_FEED_TEXT = (By.XPATH, ".//h1[text()='Лента заказов']")  # Текст 'Лента заказов'
     INGREDIENT_BUN = (By.XPATH, ".//a[@href='/ingredient/61c0c5a71d1f82001bdaaa6d']")  # Булка
     INGREDIENT_DETAILS = (By.XPATH, ".//h2[text()='Детали ингредиента']")  # Текст 'Детали ингредиента'
     INGREDIENT_DETAILS_CLOSE_BUTTON = (
