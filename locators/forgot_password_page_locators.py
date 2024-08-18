@@ -8,4 +8,4 @@ class ForgotPasswordPageLocators:
     BUTTON_SAVE = (By.XPATH, ".//*[text()='Сохранить']")  # Кнопка "Сохранить"
     PASSWORD_INPUT = (By.XPATH, ".//input[@type='password']")  # Поле 'Пароль'
     EYE_ICON = (By.XPATH, ".//div[@class='input__icon input__icon-action']")  # Иконка просмотра/скрытия пароля
-    ACTIVE_PASSWORD_INPUT = (By.XPATH, "//div[contains(@class, 'input_status_active')]") # Акртивноый инпут пароль
+    ACTIVE_PASSWORD_INPUT = (By.XPATH, "//div[contains(@class, 'input_status_active')]")  # Акртивноый инпут пароль

@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 
 class PersonalCabinetPage(BasePage):
-    def click_on_personal_account(self):
+    def open_personal_account(self):
         self.wait_for_clickable(LoginPageLocators.PERSONAL_CABINET_BUTTON).click()
 
     def click_history_orders(self):

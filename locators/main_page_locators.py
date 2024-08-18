@@ -19,3 +19,6 @@ class MainPageLocators:
     MAKE_ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")  # Кнопка 'Оформить заказ'
     WINDOW_ID_ORDER = (
         By.XPATH, ".//div[@class='Modal_modal__container__Wo2l_']")  # Модальное окно 'Идентификатор заказа'
+    ID_ORDER_IN_MODAL_WINDOW = (By.XPATH,
+                                ".//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")
+    # номер заказа в модальном окне 'Идентификатор заказа'

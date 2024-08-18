@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.service import Service as fs
 from pages.login_page import LoginPage
 
 
-@pytest.fixture(params=['chrome'])
+@pytest.fixture(params=['firefox', 'chrome'])
 def driver(request):
     if request.param == 'firefox':
         options = webdriver.FirefoxOptions()
@@ -22,7 +22,7 @@ def driver(request):
     yield driver
     driver.quit()
 
+
 @pytest.fixture()
 def log_in(driver):
     LoginPage(driver).login()
-

@@ -32,3 +32,10 @@ class BasePage:
     def drag_and_drop_element(self, element_to_drag, target_location):
         action_chains = ActionChains(self.driver)
         action_chains.drag_and_drop(element_to_drag, target_location).perform()
+
+    def disappeared_text(self, locator, text):
+        WebDriverWait(self.driver, 10).until_not(ec.text_to_be_present_in_element(locator, text))
+        WebDriverWait(self.driver, 10).until(lambda driver: self.find_element(locator).text.strip() != text)
+
+    def find_elements(self, locator, wait_time=10):
+        return WebDriverWait(self.driver, wait_time).until(ec.presence_of_all_elements_located(locator))

@@ -34,7 +34,7 @@ class TestMainPage:
         page.drag_on_drop_item_to_order()
         assert page.save_text_counter() == "2"
 
-    def test_create(self, driver, log_in):
+    def test_create_order(self, driver, log_in):
         page = MainPage(driver)
         page.drag_on_drop_item_to_order()
         page.click_on_process_order_button()
