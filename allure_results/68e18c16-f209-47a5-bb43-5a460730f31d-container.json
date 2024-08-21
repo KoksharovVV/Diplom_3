@@ -1,1 +1,0 @@
-{"uuid": "a43b3598-acd1-44b2-80c3-d9fa471c8415", "children": ["05a66322-d7ef-41b9-be1f-b5f3ffcd4938"], "befores": [{"name": "personal_account", "status": "passed", "steps": [{"name": "Открыть личный кабинет", "status": "passed", "start": 1724261043491, "stop": 1724261044017}], "start": 1724261043491, "stop": 1724261044017}], "start": 1724261043491, "stop": 1724261047240}

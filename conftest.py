@@ -19,7 +19,7 @@ def driver(request):
         options = webdriver.ChromeOptions()
         service = cs(executable_path=cd().install())
         options.add_argument('--window-size=1920,1080')
-        driver = webdriver.Firefox(service=service, options=options)
+        driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
 
