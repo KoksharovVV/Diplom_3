@@ -1,0 +1,1 @@
+{"uuid": "c7bd1787-cdc4-4ebe-8751-935073c2f200", "children": ["e604ae54-e1ee-460c-a228-ae160d356bc5"], "befores": [{"name": "log_in", "status": "passed", "steps": [{"name": "Авторизация", "status": "passed", "start": 1724261216637, "stop": 1724261218391}], "start": 1724261216637, "stop": 1724261218391}], "start": 1724261216637, "stop": 1724261222673}

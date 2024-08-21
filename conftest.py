@@ -5,6 +5,7 @@ from webdriver_manager.firefox import GeckoDriverManager as fd
 from selenium.webdriver.chrome.service import Service as cs
 from selenium.webdriver.firefox.service import Service as fs
 from pages.login_page import LoginPage
+from pages.main_page import MainPage
 
 
 @pytest.fixture(params=['firefox', 'chrome'])
@@ -26,3 +27,8 @@ def driver(request):
 @pytest.fixture()
 def log_in(driver):
     LoginPage(driver).login()
+
+
+@pytest.fixture()
+def personal_account(driver, log_in):
+    MainPage(driver).open_personal_account()

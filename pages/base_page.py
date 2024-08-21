@@ -22,7 +22,7 @@ class BasePage:
         return element
 
     def wait_for_clickable(self, locator, wait_time=10):
-        element = WebDriverWait(self.driver, wait_time).until(ec.visibility_of_element_located(locator))
+        element = self.wait_for_visibility(locator)
         WebDriverWait(self.driver, wait_time).until(ec.element_to_be_clickable(locator))
         return element
 

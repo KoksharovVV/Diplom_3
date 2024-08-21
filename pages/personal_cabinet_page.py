@@ -1,14 +1,9 @@
 import allure
-from locators.login_page_locators import LoginPageLocators
-from locators.personal_cabinet_pege_locators import PersonalCabinetPageLocators
 from pages.base_page import BasePage
+from locators.personal_cabinet_pege_locators import PersonalCabinetPageLocators
 
 
 class PersonalCabinetPage(BasePage):
-    @allure.step("Открыть личный кабинет")
-    def open_personal_account(self):
-        self.wait_for_clickable(LoginPageLocators.PERSONAL_CABINET_BUTTON).click()
-
     @allure.step("Открыть историю заказов")
     def click_history_orders(self):
         self.wait_for_clickable(PersonalCabinetPageLocators.HISTORY_ORDERS_BUTTON).click()
@@ -25,6 +20,16 @@ class PersonalCabinetPage(BasePage):
     def click_exit(self):
         return self.find_element(locator=PersonalCabinetPageLocators.EXIT_BUTTON).click()
 
-    @allure.step("Найти email инпут")
-    def find_email_input(self):
-        return self.find_element(locator=LoginPageLocators.LOGIN_LABEL)
+    @allure.step("Открыть историю заказов")
+    def open_history_orders(self):
+        self.wait_and_click(locator=PersonalCabinetPageLocators.HISTORY_ORDERS_BUTTON)
+
+    @allure.step("Проверить отсутствие заголовка Профиль")
+    def not_find_label_profile(self):
+        return self.not_find_element(locator=PersonalCabinetPageLocators.LABEL_PROFILE)
+
+    @allure.step("Получить id заказов из истории")
+    def get_id_orders_from_history(self):
+        elements = self.find_elements(PersonalCabinetPageLocators.HISTORY_ORDERS)
+        orders_history = [element.text for element in elements]
+        return orders_history

@@ -2,6 +2,7 @@ import allure
 from data import TestDataUrl
 from pages.main_page import MainPage
 from pages.order_feed_page import OrderFeedPage
+from pages.personal_cabinet_page import PersonalCabinetPage
 
 
 class TestOrderFeedPage:
@@ -43,11 +44,11 @@ class TestOrderFeedPage:
         assert page.get_order_in_work()[1:] == id_order
 
     @allure.title('Проверка отображения заказов из истории заказов в ленте заказов')
-    def test_contains_order_history_in_orders_feed(self, driver, log_in):
-        page = MainPage(driver)
-        page.open_personal_cabinet()
+    def test_contains_order_history_in_orders_feed(self, driver, personal_account):
+        page = PersonalCabinetPage(driver)
         page.open_history_orders()
         orders_history = page.get_id_orders_from_history()
-        page.click_on_order_feed()
-        orders_feed = page.get_orders_from_orders_feed()
-        assert page.check_orders_in_order_feed(orders_history, orders_feed)
+        order_feed_page = OrderFeedPage(driver)
+        order_feed_page.open_page(TestDataUrl.ORDER_FEED_URL)
+        orders_feed = order_feed_page.get_orders_from_orders_feed()
+        assert order_feed_page.check_orders_in_order_feed(orders_history, orders_feed)

@@ -1,13 +1,12 @@
 import allure
 from data import TestDataUrl, TestLoginPageData
-from pages.login_page import LoginPage
 from pages.forgot_password_page import ForgotPasswordPage
 
 
 class TestPasswordRecovery:
     @allure.title('Проверка перехода на страницу восстановления пароля по кнопке «Восстановить пароль')
     def test_open_forgot_password_page(self, driver):
-        page = LoginPage(driver)
+        page = ForgotPasswordPage(driver)
         page.open_page(TestDataUrl.LOGIN_PAGE_URL)
         page.click_button_restore_password()
         assert page.find_label_restore_password()
@@ -28,4 +27,4 @@ class TestPasswordRecovery:
         page.click_restore_button()
         page.set_password_input()
         page.click_on_eye()
-        assert page.find_field_active_field_password
+        assert page.find_field_active_field_password()

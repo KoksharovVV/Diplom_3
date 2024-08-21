@@ -8,9 +8,3 @@ class TestDataUrl:
 class TestLoginPageData:
     email = "svin123123@mail.ru"
     password = "123123"
-
-
-class TestForgotData:
-    email = "svin123123@mail.ru"
-    password = "123123"
-

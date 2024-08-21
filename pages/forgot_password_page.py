@@ -1,8 +1,7 @@
 import allure
-
-from locators.forgot_password_page_locators import ForgotPasswordPageLocators
 from pages.base_page import BasePage
-from data import TestForgotData
+from locators.forgot_password_page_locators import ForgotPasswordPageLocators
+from data import TestLoginPageData
 
 
 class ForgotPasswordPage(BasePage):
@@ -10,6 +9,10 @@ class ForgotPasswordPage(BasePage):
     @allure.step("Найти заголовок 'Восстановить пароль'")
     def find_label_restore_password(self):
         return self.find_element(locator=ForgotPasswordPageLocators.LABEL_RESTORE_PASSWORD)
+
+    @allure.step("Нажать 'Восстановить пароль'")
+    def click_button_restore_password(self):
+        self.wait_and_click(locator=ForgotPasswordPageLocators.BUTTON_RESTORE_PASSWORD)
 
     @allure.step("Заполнить поле email")
     def set_email_input(self, email):
@@ -27,7 +30,7 @@ class ForgotPasswordPage(BasePage):
     @allure.step("Заполнить поле 'Пароль'")
     def set_password_input(self):
         password_input = self.wait_for_clickable(locator=ForgotPasswordPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(TestForgotData.password)
+        password_input.send_keys(TestLoginPageData.password)
 
     @allure.step("Нажать на иконку глаза ")
     def click_on_eye(self):

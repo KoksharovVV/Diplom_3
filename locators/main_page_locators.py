@@ -22,3 +22,11 @@ class MainPageLocators:
     ID_ORDER_IN_MODAL_WINDOW = (By.XPATH,
                                 ".//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")
     # номер заказа в модальном окне 'Идентификатор заказа'
+    CLOSE_ORDER_WINDOW = (By.XPATH, ".//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']")
+    # крестик для закрытия модального окна 'Идентификатор заказа'
+    COUNTER_COMPLETED_TODAY = (By.XPATH, "//p[text()='Выполнено за сегодня:']/following-sibling::p[1]")
+    # счетчик 'Выполнено за сегодня'
+    COUNTER_COMPLETED_FOR_ALL_TIME = (By.XPATH, "//p[text()='Выполнено за все время:']/following-sibling::p[1]")
+    # счетчик за все время 'Ленте Заказов'
+    ORDER_IN_WORK = (By.XPATH, ".//ul[@class='OrderFeed_orderListReady__1YFem OrderFeed_orderList__cBvyi']/li")
+    # id заказа в статусе 'В работе'
